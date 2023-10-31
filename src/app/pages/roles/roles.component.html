@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Agregar Rol (Formulario Template)</h1>
+  </div>
+  <form #form="ngForm" (ngSubmit)="save(form)" class="row justify-content-center">
+    <div class="col-12 col-md-6 mb-3">
+      <label for="name" class="form-label">Nombre</label>
+      <input [(ngModel)]="role.name" required minlength="3" maxlength="50" name="name" type="text" class="form-control" id="name">
+      <app-validator [control]="form.controls['name']" name="Nombre"></app-validator>
+    </div>
+    <div class="col-12 col-md-6 mb-3">
+      <label for="shortname" class="form-label">Nombre Corto</label>
+      <input [(ngModel)]="role.shortname" required minlength="2" maxlength="10" name="shortname" type="text" class="form-control" id="shortname">
+      <app-validator [control]="form.controls['shortname']" name="Nombre Corto"></app-validator>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-success" type="submit" [disabled]="form.invalid">Agregar</button>
+    </div>
+  </form>
+</div>

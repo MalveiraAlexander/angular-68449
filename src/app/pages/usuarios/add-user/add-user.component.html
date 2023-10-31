@@ -1,0 +1,42 @@
+<div class="container">
+ <div class="row justify-content-center text-center mt-2">
+  <h1>Alta de usuario (Formulario Reactivo)</h1>
+ </div>
+ <form [formGroup]="form" (ngSubmit)="save()" class="row justify-content-center mt-4">
+  <div class="col-12 col-md-6 mb-3">
+    <label for="firstname" class="form-label">Nombre</label>
+    <input formControlName="firstname" type="text" class="form-control" id="firstname">
+    <!-- <app-validator [control]="form.controls['firstname']" name="Nombre"></app-validator> -->
+  </div>
+  <div class="col-12 col-md-6 mb-3">
+    <label for="lastname" class="form-label">Apellido</label>
+    <input formControlName="lastname" type="text" class="form-control" id="lastname">
+    <!-- <app-validator [control]="form.controls['lastname']" name="Apellido"></app-validator> -->
+  </div>
+  <div class="col-12 col-md-6 mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input formControlName="email" type="email" class="form-control" id="email">
+    <!-- <app-validator [control]="form.controls['email']" name="Email"></app-validator> -->
+  </div>
+  <div class="col-12 col-md-6 mb-3">
+    <label for="date" class="form-label">Fecha de nacimiento</label>
+    <input formControlName="date" type="date" class="form-control" id="date">
+    <!-- <app-validator [control]="form.controls['date']" name="Fecha de nacimiento"></app-validator> -->
+  </div>
+  <div class="col-12 col-md-6 mb-3">
+    <label for="genre" class="form-label">Se Persive</label>
+    <select formControlName="genre" (change)="changeGenre($event)" class="form-select" id="genre">
+      <option *ngFor="let item of genres" [value]="item">{{item}}</option>
+    </select>
+    <!-- <app-validator [control]="form.controls['genre']" name="Se Persive"></app-validator> -->
+  </div>
+  <div class="col-12 col-md-6 mb-3">
+    <label for="other-genre" class="form-label">&nbsp;</label>
+    <input formControlName="othergenre" type="text" class="form-control" id="other-genre">
+    <!-- <app-validator [control]="form.controls['othergenre']" name="Otros"></app-validator> -->
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-success" type="submit" [disabled]="form.invalid">Agregar</button>
+  </div>
+ </form>
+</div>
