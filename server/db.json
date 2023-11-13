@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "name": "Toribio Javier Felix 2",
+      "email": "tjavier@gmail.com",
+      "edad": 25,
+      "id": 2
+    },
+    {
+      "name": "Mauricio Gonzalez",
+      "email": "mgonzalez@edu.ar",
+      "edad": 24,
+      "id": 3
+    }
+  ]
+}
